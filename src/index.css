@@ -59,6 +59,17 @@ h6 {
   isolation: isolate;
 }
 
+/* CSS variables */
+:root {
+  --clr-prymary-100: hwb(3 16% 15%);
+  --clr-prymary-400: hwb(3 16% 25%);
+  --clr-secondary-400: hwb(50 0% 0%);
+  --clr-secondary-600: hwb(50 0% 10%);
+
+  --fs-header: 5rem;
+  --fs-paragraph: 1.4rem;
+}
+
 /* fonts */
 
 @font-face {
@@ -74,5 +85,105 @@ h6 {
 /* general styling */
 
 body {
+  background-color: var(--clr-prymary-400);
+}
+
+.main {
   font-family: "IBM Plex Serif";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.main-header {
+  font-size: var(--fs-header);
+  color: var(--clr-secondary-400);
+}
+
+.main-text {
+  font-size: var(--fs-paragraph);
+  margin-bottom: 40px;
+}
+
+.label-text {
+  font-size: var(--fs-paragraph);
+  margin-bottom: 10px;
+}
+
+.select-dropdown {
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 60px;
+  color: var(--clr-secondary-400);
+  background-color: var(--clr-prymary-400);
+  border: 2px solid var(--clr-secondary-400);
+}
+
+.main-start-btn {
+  padding: 20px 40px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: "IBM Plex Serif Bold";
+  font-size: var(--fs-paragraph);
+  background-color: var(--clr-secondary-400);
+  color: var(--clr-prymary-400);
+}
+
+.main-start-btn:hover {
+  color: var(--clr-prymary-100);
+  box-shadow: 0px 6px 16px var(--clr-secondary-600);
+}
+
+.hexagone {
+  position: relative;
+  width: 100px;
+  height: 56px;
+  background-color: black;
+  cursor: pointer;
+}
+
+.hexagone::before,
+.hexagone::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+}
+
+.hexagone::before {
+  bottom: 100%;
+  border-bottom: 28.87px solid black;
+}
+
+.hexagone::after {
+  top: 100%;
+  border-top: 28.87px solid black;
+}
+
+.hex-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.hex-row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.hex-row-offset {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 28px;
+  margin-bottom: 28px;
 }
