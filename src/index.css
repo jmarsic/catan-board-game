@@ -145,6 +145,7 @@ body {
   height: 56px;
   background-color: black;
   cursor: pointer;
+  text-align: center;
 }
 
 .hexagone::before,
