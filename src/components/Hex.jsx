@@ -3,7 +3,7 @@ const Hex = ({ number, color }) => {
     backgroundColor: color,
   };
   return (
-    <div className="hexagone" style={styles}>
+    <div className={`hexagone ${color}`} style={styles}>
       {number}
     </div>
   );

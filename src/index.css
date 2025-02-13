@@ -143,9 +143,12 @@ body {
   position: relative;
   width: 100px;
   height: 56px;
-  background-color: black;
   cursor: pointer;
-  text-align: center;
+  font-family: "IBM Plex Serif Bold";
+  font-size: var(--fs-paragraph);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hexagone::before,
@@ -160,12 +163,58 @@ body {
 
 .hexagone::before {
   bottom: 100%;
-  border-bottom: 28.87px solid black;
 }
 
 .hexagone::after {
   top: 100%;
-  border-top: 28.87px solid black;
+}
+
+.lightgreen::before {
+  border-bottom: 28.87px solid lightgreen;
+}
+
+.lightgreen::after {
+  border-top: 28.87px solid lightgreen;
+}
+
+.yellow::before {
+  border-bottom: 28.87px solid yellow;
+}
+
+.yellow::after {
+  border-top: 28.87px solid yellow;
+}
+
+.darkgreen::before {
+  border-bottom: 28.87px solid darkgreen;
+}
+
+.darkgreen::after {
+  border-top: 28.87px solid darkgreen;
+}
+
+.grey::before {
+  border-bottom: 28.87px solid grey;
+}
+
+.grey::after {
+  border-top: 28.87px solid grey;
+}
+
+.orange::before {
+  border-bottom: 28.87px solid orange;
+}
+
+.orange::after {
+  border-top: 28.87px solid orange;
+}
+
+.beige::before {
+  border-bottom: 28.87px solid beige;
+}
+
+.beige::after {
+  border-top: 28.87px solid beige;
 }
 
 .hex-grid {
