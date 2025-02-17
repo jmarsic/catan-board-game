@@ -18,9 +18,9 @@ function App() {
 
   return (
     <div className="main">
-      <h1 className="main-header">CATAN</h1>
       {!isGameRunning && (
         <>
+          <h1 className="main-header">CATAN</h1>
           <p className="main-text">Famous board game "Catan"</p>
           <label className="label-text" htmlFor="players">
             Please select number of players:
@@ -38,7 +38,9 @@ function App() {
       )}
       {isGameRunning && (
         <>
-          <p className="main-text">Player one:</p>
+          <h2 className="active-game--header">CATAN</h2>
+          <h3 className="active-game--text">Trade, build, settle</h3>
+          <p className="active-player--text">Player one:</p>
           <Board hexData={hexData} />
         </>
       )}

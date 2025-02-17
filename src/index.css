@@ -94,12 +94,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
 }
 
 .main-header {
   font-size: var(--fs-header);
   color: var(--clr-secondary-400);
+  margin-top: 40px;
 }
 
 .main-text {
@@ -110,6 +110,22 @@ body {
 .label-text {
   font-size: var(--fs-paragraph);
   margin-bottom: 10px;
+}
+
+.active-game--header {
+  font-size: 3rem;
+  color: var(--clr-secondary-400);
+}
+
+.active-game--text {
+  font-size: 1.6rem;
+  color: var(--clr-secondary-400);
+}
+
+.active-player--text {
+  font-size: 1.4rem;
+  color: var(--clr-secondary-400);
+  margin-bottom: 40px;
 }
 
 .select-dropdown {
