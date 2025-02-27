@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Board from "./components/Board.jsx";
+import Select from "./components/Select.jsx";
 
 import { initialData } from "./data/initialHexData.js";
 
@@ -10,9 +11,11 @@ console.log(initialState);
 function App() {
   const [isGameRunning, setIsGameRunning] = useState(false);
   const [hexData, setHexData] = useState(initialData);
+  const [selectedPlayers, setSelectedPlayers] = useState("2");
 
   const startGame = () => {
     console.log("Let's play!");
+    console.log(`Number of active players: ${selectedPlayers}`);
     setIsGameRunning(true);
   };
 
@@ -22,18 +25,18 @@ function App() {
         <>
           <h1 className="main-header">CATAN</h1>
           <p className="main-text">Famous board game "Catan"</p>
-          <label className="label-text" htmlFor="players">
-            Please select number of players:
-          </label>
-          <select className="select-dropdown" name="players" id="players">
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-
-          <button className="main-start-btn" onClick={startGame}>
-            Start Game
-          </button>
+          <form action={startGame} className="form">
+            <label className="label-text" htmlFor="players">
+              Please select number of players:
+            </label>
+            <Select
+              options={["2", "3", "4"]}
+              onSelect={(value) => setSelectedPlayers(value)}
+            />
+            <button className="main-start-btn" type="submit">
+              Start Game
+            </button>
+          </form>
         </>
       )}
       {isGameRunning && (

@@ -103,40 +103,61 @@ body {
 }
 
 .main-text {
+  color: var(--clr-secondary-400);
   font-size: var(--fs-paragraph);
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .label-text {
+  color: var(--clr-secondary-400);
   font-size: var(--fs-paragraph);
   margin-bottom: 10px;
 }
-
-.active-game--header {
-  font-size: 3rem;
-  color: var(--clr-secondary-400);
-}
-
-.active-game--text {
-  font-size: 1.6rem;
-  color: var(--clr-secondary-400);
-}
-
-.active-player--text {
-  font-size: 1.4rem;
-  color: var(--clr-secondary-400);
-  margin-bottom: 40px;
-}
-
-.select-dropdown {
-  width: 200px;
-  text-align: center;
-  padding: 10px;
+.custom-select-container {
+  position: relative;
+  width: 220px;
+  margin-bottom: 44px;
   border-radius: 8px;
-  margin-bottom: 60px;
+  font-family: "IBM Plex Serif Bold";
+}
+
+.custom-select-selected {
+  padding: 10px;
+  text-align: center;
   color: var(--clr-secondary-400);
   background-color: var(--clr-prymary-400);
+  border-radius: 8px;
   border: 2px solid var(--clr-secondary-400);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.custom-select-options {
+  position: absolute;
+  width: 100%;
+  color: var(--clr-secondary-400);
+  background-color: var(--clr-prymary-400);
+  border-radius: 8px;
+  border: 2px solid var(--clr-secondary-400);
+  overflow: hidden;
+}
+
+.custom-select-option {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.custom-select-option:hover {
+  color: var(--clr-prymary-400);
+  background-color: var(--clr-secondary-400);
 }
 
 .main-start-btn {
@@ -153,6 +174,22 @@ body {
 .main-start-btn:hover {
   color: var(--clr-prymary-100);
   box-shadow: 0px 6px 16px var(--clr-secondary-600);
+}
+
+.active-game--header {
+  font-size: 3rem;
+  color: var(--clr-secondary-400);
+}
+
+.active-game--text {
+  font-size: 1.6rem;
+  color: var(--clr-secondary-400);
+}
+
+.active-player--text {
+  font-size: 1.4rem;
+  color: var(--clr-secondary-400);
+  margin-bottom: 40px;
 }
 
 .hexagone {
