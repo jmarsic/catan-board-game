@@ -12,10 +12,28 @@ function App() {
   const [isGameRunning, setIsGameRunning] = useState(false);
   const [hexData, setHexData] = useState(initialData);
   const [selectedPlayers, setSelectedPlayers] = useState("2");
+  const [players, setPlayers] = useState();
+
+  console.log(players);
 
   const startGame = () => {
-    console.log("Let's play!");
     console.log(`Number of active players: ${selectedPlayers}`);
+    const numberOfPlayers = Number(selectedPlayers);
+
+    const initialPlayers = Array.from({ length: numberOfPlayers }, (_, i) => ({
+      id: i + 1,
+      name: `Player ${i + 1}`,
+      resources: {
+        brick: 0,
+        lumber: 0,
+        ore: 0,
+        grain: 0,
+        wool: 0,
+      },
+      points: 0,
+      cards: [],
+    }));
+    setPlayers(initialPlayers);
     setIsGameRunning(true);
   };
 

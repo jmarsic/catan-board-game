@@ -627,9 +627,25 @@ const BoardProvider = () => {
     },
   });
 
-  const buildHouse = () => {};
+  const buildHouse = (vertexId, player) => {
+    setBoardData((prevData) => ({
+      ...prevData,
+      vertices: {
+        ...prevData.vertices,
+        [vertexId]: { ...prevData.vertices[vertexId], owner: player },
+      },
+    }));
+  };
 
-  const buildRoad = () => {};
+  const buildRoad = (edgeId, player) => {
+    setBoardData((prevData) => ({
+      ...prevData,
+      edges: {
+        ...prevData.edges,
+        [edgeId]: { ...prevData.edges[edgeId], owner: player },
+      },
+    }));
+  };
 
   const value = useMemo(
     () => ({ boardData, buildHouse, buildRoad }),
