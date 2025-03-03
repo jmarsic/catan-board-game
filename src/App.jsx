@@ -10,7 +10,7 @@ console.log(initialState);
 
 function App() {
   const [isGameRunning, setIsGameRunning] = useState(false);
-  const [hexData, setHexData] = useState(initialData);
+  const [hexData, setHexData] = useState(initialState);
   const [selectedPlayers, setSelectedPlayers] = useState("2");
   const [players, setPlayers] = useState();
 

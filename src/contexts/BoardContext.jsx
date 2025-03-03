@@ -627,7 +627,25 @@ const BoardProvider = () => {
     },
   });
 
-  const buildHouse = (vertexId, player) => {
+  const buildSettlement = (vertexId, player) => {
+    const vertex = boardData.vertices[vertexId];
+
+    if (vertex.owner !== null) {
+      console.log("Settlement is already occupied!");
+      return;
+    }
+
+    const hasNeighbours = vertex.neighbours.some(
+      (neighbourId) => boardData.vertices[neighbourId].owner !== null
+    );
+
+    if (hasNeighbours) {
+      console.log(
+        "Cannot be built! Settlement must be at least 1 space away from other player's settlement."
+      );
+      return;
+    }
+
     setBoardData((prevData) => ({
       ...prevData,
       vertices: {
@@ -638,6 +656,24 @@ const BoardProvider = () => {
   };
 
   const buildRoad = (edgeId, player) => {
+    const edge = boardData.edges[edgeId];
+
+    if (edge.owner !== null) {
+      console.log("Edge is already occupied!");
+      return;
+    }
+
+    const hasNeighbours = edge.neighbours.some(
+      (edgeId) => boardData.edges[edgeId].owner !== null
+    );
+
+    if (hasNeighbours) {
+      console.log(
+        "A road cannot be built, it must be at least 1 space away from other player's road. "
+      );
+      return;
+    }
+
     setBoardData((prevData) => ({
       ...prevData,
       edges: {
@@ -647,13 +683,15 @@ const BoardProvider = () => {
     }));
   };
 
-  const value = useMemo(
-    () => ({ boardData, buildHouse, buildRoad }),
+  const cachedValue = useMemo(
+    () => ({ boardData, buildSettlement, buildRoad }),
     [boardData]
   );
 
   return (
-    <BoardContext.Provider value={value}>{children}</BoardContext.Provider>
+    <BoardContext.Provider value={cachedValue}>
+      {children}
+    </BoardContext.Provider>
   );
 };
 
