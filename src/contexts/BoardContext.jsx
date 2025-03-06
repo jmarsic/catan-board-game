@@ -2,7 +2,7 @@ import { createContext, useMemo, useState } from "react";
 
 export const BoardContext = createContext();
 
-const BoardProvider = () => {
+const BoardProvider = ({ children }) => {
   const [boardData, setBoardData] = useState({
     vertices: {
       v1: { id: "v1", hexes: [1], owner: null, neighbours: ["v4", "v5"] },
@@ -683,13 +683,13 @@ const BoardProvider = () => {
     }));
   };
 
-  const cachedValue = useMemo(
+  const cachedBoardValues = useMemo(
     () => ({ boardData, buildSettlement, buildRoad }),
     [boardData]
   );
 
   return (
-    <BoardContext.Provider value={cachedValue}>
+    <BoardContext.Provider value={cachedBoardValues}>
       {children}
     </BoardContext.Provider>
   );
