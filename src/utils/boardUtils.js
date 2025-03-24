@@ -1,35 +1,48 @@
 import {
-  HexHeight,
-  HexWidth,
-  HexGap,
-  HexOffsetY,
-  VertexOffsets,
-  RowLayout,
+  VerticesTopPositions,
+  RowVerticesNumber,
+  VerticesRowOffsets,
+  VerticesColumnOffsets,
+  VerticesBottomPositions,
 } from "../constants/hexConstants";
 
 export const generateVertexPositions = () => {
   let vertices = {};
   let vertexId = 0;
   let startY = 0;
+  let startX = 0;
 
-  RowLayout.forEach((hexCount, rowIndex) => {
-    let startX = rowIndex % 2 === 0 ? 0 : HexWidth / 2 + HexGap / 2;
+  RowVerticesNumber.forEach((verticesNumber, rowIndex) => {
+    if (rowIndex < 3) {
+      startX = VerticesRowOffsets[rowIndex];
+      startY = VerticesColumnOffsets[rowIndex];
+      for (let i = 0; i < verticesNumber; i++) {
+        const [dx, dy] = VerticesTopPositions[i];
 
-    for (let i = 0; i < hexCount; i++) {
-      const hexX = startX + i * (HexWidth + HexGap);
-      const hexY = startY;
-
-      VertexOffsets.forEach(([dx, dy]) => {
-        const vx = hexX + dx;
-        const vy = hexY + dy;
-        const key = `${vx},${vy}`;
+        const vx = startX + dx;
+        const vy = startY + dy;
+        const key = `${vx}, ${vy}`;
 
         if (!vertices[key]) {
           vertices[key] = { id: vertexId++, x: vx, y: vy };
         }
-      });
+      }
+    } else if (rowIndex > 2) {
+      startX = VerticesRowOffsets[rowIndex];
+      startY = VerticesColumnOffsets[rowIndex];
+      for (let i = 0; i < verticesNumber; i++) {
+        const [dx, dy] = VerticesBottomPositions[i];
+
+        const vx = startX + dx;
+        const vy = startY + dy;
+        const key = `${vx}, ${vy}`;
+
+        if (!vertices[key]) {
+          vertices[key] = { id: vertexId++, x: vx, y: vy };
+        }
+      }
     }
-    startY += HexHeight + HexOffsetY;
   });
+  console.log(vertices);
   return Object.values(vertices);
 };
