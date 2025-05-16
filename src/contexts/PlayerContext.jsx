@@ -5,11 +5,14 @@ export const PlayerContext = createContext();
 const PlayerProvider = ({ children, selectedPlayers }) => {
   const numberOfPlayers = Number(selectedPlayers);
 
+  const playerColor = ["blue", "green", "white", "red"];
+
   const initialPlayerStats = Array.from(
     { length: numberOfPlayers },
     (_, i) => ({
       id: i + 1,
       name: `Player ${i + 1}`,
+      color: playerColor[i],
       resources: {
         brick: 0,
         lumber: 0,
