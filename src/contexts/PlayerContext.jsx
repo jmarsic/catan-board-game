@@ -33,8 +33,12 @@ const PlayerProvider = ({ children, selectedPlayers }) => {
     setCurrentPlayerIndex((prevIndex) => (prevIndex + 1) % numberOfPlayers);
   };
 
+  const prevPlayer = () => {
+    setCurrentPlayerIndex((prevIndex) => (prevIndex - 1) % numberOfPlayers);
+  };
+
   const cachedPlayerValues = useMemo(
-    () => ({ playersData, currentPlayer, nextPlayer }),
+    () => ({ playersData, currentPlayer, nextPlayer, prevPlayer }),
     [playersData, currentPlayer]
   );
 

@@ -4,8 +4,7 @@ import { PlayerContext } from "./PlayerContext";
 export const BoardContext = createContext();
 
 const BoardProvider = ({ children, numberOfPlayers }) => {
-  // console.log(`BOARD: ${numberOfPlayers}`);
-  const { currentPlayer, playersData } = useContext(PlayerContext);
+  const { currentPlayer, nextPlayer, prevPlayer } = useContext(PlayerContext);
 
   const [gamePhase, setGamePhase] = useState("setup");
   const [setupRound, setSetupRound] = useState(1);
@@ -14,7 +13,6 @@ const BoardProvider = ({ children, numberOfPlayers }) => {
 
   const [boardData, setBoardData] = useState({
     vertices: {
-      //TODO: izmjenit vrhove
       v1: { id: "v1", hexes: [1], owner: null, neighbours: ["v2", "v9"] },
       v2: { id: "v2", hexes: [1], owner: null, neighbours: ["v1", "v3"] },
       v3: {
@@ -803,17 +801,18 @@ const BoardProvider = ({ children, numberOfPlayers }) => {
   };
 
   const nextSetupPlayer = () => {
-    console.log(`Trenutni igrac: ${currentSetupPlayer + 1}`);
     if (setupRound === 1) {
       if (currentSetupPlayer < numberOfPlayers - 1) {
         setCurrentSetupPlayer((prevPlayer) => prevPlayer + 1);
+        nextPlayer();
       } else {
         setSetupRound(2);
         setCurrentSetupPlayer(numberOfPlayers - 1);
       }
     } else {
-      if (currentPlayer > 0) {
+      if (currentSetupPlayer > 0) {
         setCurrentSetupPlayer((prevPlayer) => prevPlayer - 1);
+        prevPlayer();
       } else {
         setGamePhase("main");
       }
