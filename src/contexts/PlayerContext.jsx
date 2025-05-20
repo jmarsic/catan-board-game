@@ -14,11 +14,11 @@ const PlayerProvider = ({ children, selectedPlayers }) => {
       name: `Player ${i + 1}`,
       color: playerColor[i],
       resources: {
-        brick: 0,
+        wool: 0,
+        grain: 0,
         lumber: 0,
         ore: 0,
-        grain: 0,
-        wool: 0,
+        brick: 0,
       },
       points: 0,
       cards: [],
@@ -37,8 +37,27 @@ const PlayerProvider = ({ children, selectedPlayers }) => {
     setCurrentPlayerIndex((prevIndex) => (prevIndex - 1) % numberOfPlayers);
   };
 
+  const addResources = (playerId, resourceType, amount) => {
+    setPlayersData((prevData) =>
+      prevData.map((p) =>
+        p.id === playerId
+          ? {
+              ...p,
+              [resourceType]: p.resources[resourceType] + amount,
+            }
+          : p
+      )
+    );
+  };
+
   const cachedPlayerValues = useMemo(
-    () => ({ playersData, currentPlayer, nextPlayer, prevPlayer }),
+    () => ({
+      playersData,
+      currentPlayer,
+      nextPlayer,
+      prevPlayer,
+      addResources,
+    }),
     [playersData, currentPlayer]
   );
 
