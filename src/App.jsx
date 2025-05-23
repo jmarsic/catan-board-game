@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Board from "./components/Board.jsx";
 import Select from "./components/Select.jsx";
+import DiceRoll from "./components/DiceRoll.jsx";
 
 import BoardProvider from "./contexts/BoardContext.jsx";
 import PlayerProvider from "./contexts/PlayerContext.jsx";
@@ -42,13 +43,17 @@ function App() {
         </>
       )}
       {isGameRunning && (
-        <BoardProvider>
-          <PlayerProvider selectedPlayers={selectedPlayers}>
+        <PlayerProvider selectedPlayers={selectedPlayers}>
+          <BoardProvider
+            numberOfPlayers={Number(selectedPlayers)}
+            hexData={hexData}
+          >
             <h2 className="active-game--header">CATAN</h2>
             <h3 className="active-game--text">Trade, build, settle</h3>
             <Board hexData={hexData} />
-          </PlayerProvider>
-        </BoardProvider>
+            <DiceRoll hexData={hexData} />
+          </BoardProvider>
+        </PlayerProvider>
       )}
     </div>
   );
