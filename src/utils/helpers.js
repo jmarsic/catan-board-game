@@ -6,3 +6,7 @@ export const shuffleArray = (arr) => {
   }
   return newArr;
 };
+
+export const generateRandomNumber = () => {
+  return Math.floor(Math.random() * 6) + 1;
+};
