@@ -8,8 +8,8 @@ const Edge = ({ edge, style, className }) => {
   const styles = {
     position: "absolute",
     width: "50px",
-    height: "5px",
-    backgroundColor: edge.color || "trasparent",
+    height: "8px",
+    backgroundColor: edge.color || "transparent",
     cursor: "grab",
     ...style,
   };
