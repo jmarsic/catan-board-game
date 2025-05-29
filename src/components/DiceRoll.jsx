@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 
-import { BoardContext } from "../contexts/BoardContext";
-import { PlayerContext } from "../contexts/PlayerContext";
+import { BoardContext } from "../contexts/BoardContext.jsx";
+import { PlayerContext } from "../contexts/PlayerContext.jsx";
 
-import { generateRandomNumber } from "../utils/helpers";
+import { generateRandomNumber } from "../utils/helpers.js";
 
 const resourceMapping = {
   lightgreen: "wool",
@@ -45,7 +45,7 @@ const DiceRoll = ({ hexData }) => {
   };
 
   return (
-    <div>
+    <div className="roll-wrapper">
       {gamePhase !== "main" ? (
         <p>Setup game..</p>
       ) : dice.d1 === null ? (
@@ -60,13 +60,16 @@ const DiceRoll = ({ hexData }) => {
           </button>
         </div>
       )}
-      <div className="player-stats">
+      <div className="player-stats-wrapper">
         {playersData.map((player) => (
           <div
+            className="player-stats"
             key={player.id}
             style={{
-              border: `2px solid ${player.color}`,
-              padding: "4px",
+              backgroundColor: "hwb(40 50% 10%)",
+              border: `4px solid ${player.color}`,
+              borderRadius: "8px",
+              padding: "20px",
               margin: "4px",
             }}
           >
