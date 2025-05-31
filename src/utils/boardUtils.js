@@ -9,7 +9,7 @@ import {
   EdgesColumnOffsets,
   EdgesTopPositions,
   EdgesVerticalPositions,
-} from "../constants/hexConstants";
+} from "../constants/hexConstants.js";
 
 export const generateVertexPositions = () => {
   let vertices = {};
@@ -29,7 +29,7 @@ export const generateVertexPositions = () => {
         const key = `v${vertexId}`;
 
         if (!vertices[key]) {
-          vertices[key] = { id: vertexId++, x: vx, y: vy };
+          vertices[key] = { id: `v${vertexId++}`, x: vx, y: vy };
         }
       }
     } else if (rowIndex > 2) {
@@ -43,12 +43,12 @@ export const generateVertexPositions = () => {
         const key = `v${vertexId}`;
 
         if (!vertices[key]) {
-          vertices[key] = { id: vertexId++, x: vx, y: vy };
+          vertices[key] = { id: `v${vertexId++}`, x: vx, y: vy };
         }
       }
     }
   });
-  console.log(vertices);
+  
   return Object.values(vertices);
 };
 
@@ -72,11 +72,11 @@ export const generateUniqueRoads = () => {
         if (!roads[key] && roadId < 24) {
           const className =
             roadId % 2 ? "edge-right-rotate" : "edge-left-rotate";
-          roads[key] = { id: roadId++, x: ex, y: ey, className };
+          roads[key] = { id: `e${roadId++}`, x: ex, y: ey, className };
         } else if (!roads[key] && roadId >= 24) {
           const className =
             roadId % 2 ? "edge-left-rotate" : "edge-right-rotate";
-          roads[key] = { id: roadId++, x: ex, y: ey, className };
+          roads[key] = { id: `e${roadId++}`, x: ex, y: ey, className };
         }
       }
     } else if (rowIndex % 2 !== 0) {
@@ -91,7 +91,7 @@ export const generateUniqueRoads = () => {
 
         if (!roads[key]) {
           const className = "edge";
-          roads[key] = { id: roadId++, x: ex, y: ey, className };
+          roads[key] = { id: `e${roadId++}`, x: ex, y: ey, className };
         }
       }
     } else if (rowIndex >= 6 && rowIndex % 2 === 0) {
@@ -107,16 +107,15 @@ export const generateUniqueRoads = () => {
         if (!roads[key] && roadId < 55) {
           const className =
             roadId % 2 ? "edge-right-rotate" : "edge-left-rotate";
-          roads[key] = { id: roadId++, x: ex, y: ey, className };
+          roads[key] = { id: `e${roadId++}`, x: ex, y: ey, className };
         } else if (!roads[key] && roadId >= 55) {
           const className =
             roadId % 2 ? "edge-left-rotate" : "edge-right-rotate";
-          roads[key] = { id: roadId++, x: ex, y: ey, className };
+          roads[key] = { id: `e${roadId++}`, x: ex, y: ey, className };
         }
       }
     }
   });
-  console.log(roads);
 
   return Object.values(roads);
 };
