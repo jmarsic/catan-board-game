@@ -15,7 +15,7 @@ const resourceMapping = {
 
 const DiceRoll = ({ hexData }) => {
   const { boardData, gamePhase } = useContext(BoardContext);
-  const { playersData, addResources } = useContext(PlayerContext);
+  const { playersData, addResources, nextPlayer } = useContext(PlayerContext);
   console.log(playersData);
 
   const [dice, setDice] = useState({ d1: null, d2: null });
@@ -30,13 +30,13 @@ const DiceRoll = ({ hexData }) => {
   const distribute = (sum) => {
     console.log("--- boardData is: ", boardData);
     hexData.forEach((hex, idx) => {
-      if (hex.number !== sum) return;
+      if (hex.number !== sum) return false;
       const resource = resourceMapping[hex.color];
       console.log(resource);
-      if (!resource) return;
+      if (!resource) return false;
 
       Object.values(boardData.vertices).forEach((v) => {
-        if (!v.hexes.includes(idx + 1) || v.owner === null) return;
+        if (!v.hexes.includes(idx + 1) || v.owner === null) return false;
         const amount = v.buildingType === "city" ? 2 : 1;
         console.log(`Player ${v.owner} gets ${amount} ${resource}.`);
         addResources(v.owner, resource, amount);
@@ -55,7 +55,12 @@ const DiceRoll = ({ hexData }) => {
           <p>
             You rolled: {dice.d1} + {dice.d2} = {dice.d1 + dice.d2}
           </p>
-          <button onClick={() => setDice({ d1: null, d2: null })}>
+          <button
+            onClick={() => {
+              setDice({ d1: null, d2: null });
+              nextPlayer();
+            }}
+          >
             Next player
           </button>
         </div>
