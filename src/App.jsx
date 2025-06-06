@@ -3,6 +3,7 @@ import { useState } from "react";
 import Board from "./components/Board.jsx";
 import Select from "./components/Select.jsx";
 import DiceRoll from "./components/DiceRoll.jsx";
+import BuildPanel from "./components/BuildPanel.jsx";
 
 import BoardProvider from "./contexts/BoardContext.jsx";
 import PlayerProvider from "./contexts/PlayerContext.jsx";
@@ -51,7 +52,8 @@ function App() {
             <h2 className="active-game--header">CATAN</h2>
             <h3 className="active-game--text">Trade, build, settle</h3>
             <Board hexData={hexData} />
-            <DiceRoll hexData={hexData} />
+            <BuildPanel />
+            <DiceRoll />
           </BoardProvider>
         </PlayerProvider>
       )}
