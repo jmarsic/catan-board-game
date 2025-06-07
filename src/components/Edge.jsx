@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { BoardContext } from "../contexts/BoardContext";
+import { BoardContext } from "../contexts/BoardContext.jsx";
 
 const Edge = ({ edge, style, className }) => {
   const { handleEdgeClick } = useContext(BoardContext);

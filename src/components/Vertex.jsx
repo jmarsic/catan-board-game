@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { BoardContext } from "../contexts/BoardContext";
+import { BoardContext } from "../contexts/BoardContext.jsx";
 
 const Vertex = ({ vertex, style }) => {
   const { handleVertexClick } = useContext(BoardContext);
@@ -11,6 +11,12 @@ const Vertex = ({ vertex, style }) => {
     height: "20px",
     backgroundColor: vertex.color || "transparent",
     cursor: "grab",
+    zIndex: 1,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "20px",
+    fontWeight: "bold",
     ...style,
   };
 
@@ -19,7 +25,9 @@ const Vertex = ({ vertex, style }) => {
       className="vertex"
       style={styles}
       onClick={() => handleVertexClick(vertex.id)}
-    ></div>
+    >
+      {vertex.buildingType === "city" ? "X" : ""}
+    </div>
   );
 };
 
