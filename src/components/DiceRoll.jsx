@@ -5,17 +5,23 @@ import { PlayerContext } from "../contexts/PlayerContext.jsx";
 
 import { generateRandomNumber } from "../utils/helpers.js";
 
-const resourceMapping = {
-  lightgreen: "wool",
-  yellow: "grain",
-  darkgreen: "lumber",
-  grey: "ore",
-  orange: "brick",
+import sheepIcon from "../assets/icons/sheep.png";
+import grainIcon from "../assets/icons/grain.png";
+import woodIcon from "../assets/icons/wood.png";
+import oreIcon from "../assets/icons/ore.png";
+import brickIcon from "../assets/icons/brick.png";
+
+const resourceIcons = {
+  wool: sheepIcon,
+  grain: grainIcon,
+  lumber: woodIcon,
+  ore: oreIcon,
+  brick: brickIcon,
 };
 
-const DiceRoll = () => {
+const DiceRoll = ({}) => {
   const { gamePhase, handleDiceRoll } = useContext(BoardContext);
-  const { playersData, nextPlayer } = useContext(PlayerContext);
+  const { playersData, addResources, nextPlayer } = useContext(PlayerContext);
   console.log(playersData);
 
   const [dice, setDice] = useState({ d1: null, d2: null });
@@ -30,15 +36,21 @@ const DiceRoll = () => {
   return (
     <div className="roll-wrapper">
       {gamePhase !== "main" ? (
-        <p>Setup game..</p>
+        <p className="roll-status">
+          Click on vertex and then adjancent edge to build
+        </p>
       ) : dice.d1 === null ? (
-        <button onClick={roll}>Roll Dice</button>
+        <button className="roll-btn" onClick={roll}>
+          Roll Dice
+        </button>
       ) : (
-        <div>
-          <p>
-            You rolled: {dice.d1} + {dice.d2} = {dice.d1 + dice.d2}
-          </p>
+        <div className="dice-wrapper">
+          <div className="dice-results">
+            <div className="die">{dice.d1}</div>
+            <div className="die">{dice.d2}</div>
+          </div>
           <button
+            className="next-player-btn"
             onClick={() => {
               setDice({ d1: null, d2: null });
               nextPlayer();
@@ -62,9 +74,18 @@ const DiceRoll = () => {
             }}
           >
             <strong>{player.name}</strong>
-            <ul>
+            <br />
+            <span className="player-stats-about">
+              Victory points: {player.points}
+            </span>
+            <ul className="player-stats-list">
               {Object.entries(player.resources).map(([res, qty]) => (
                 <li key={res}>
+                  <img
+                    className="player-stats-list-icon"
+                    src={resourceIcons[res]}
+                    alt={res}
+                  />
                   {res} : {qty}
                 </li>
               ))}
