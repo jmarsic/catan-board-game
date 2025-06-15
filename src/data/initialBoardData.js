@@ -6,6 +6,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v2", "v9"],
+      edges: ["e1", "e7"],
     },
     v2: {
       id: "v2",
@@ -13,6 +14,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v1", "v3"],
+      edges: ["e1", "e2"],
     },
     v3: {
       id: "v3",
@@ -20,6 +22,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v2", "v4", "v11"],
+      edges: ["e2", "e3", "e8"],
     },
     v4: {
       id: "v4",
@@ -27,6 +30,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v3", "v5"],
+      edges: ["e3", "e4"],
     },
     v5: {
       id: "v5",
@@ -34,6 +38,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v4", "v6", "v13"],
+      edges: ["e4", "e5", "e9"],
     },
     v6: {
       id: "v6",
@@ -41,6 +46,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v5", "v7"],
+      edges: ["e5", "e6"],
     },
     v7: {
       id: "v7",
@@ -48,6 +54,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v6", "v15"],
+      edges: ["e6", "e10"],
     },
     v8: {
       id: "v8",
@@ -55,6 +62,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v9", "v18"],
+      edges: ["e11", "e19"],
     },
     v9: {
       id: "v9",
@@ -62,6 +70,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v1", "v8", "v10"],
+      edges: ["e7", "e11", "e12"],
     },
     v10: {
       id: "v10",
@@ -69,6 +78,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v9", "v11", "v20"],
+      edges: ["e12", "e13", "e20"],
     },
     v11: {
       id: "v11",
@@ -76,6 +86,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v3", "v10", "v12"],
+      edges: ["e8", "e13", "e14"],
     },
     v12: {
       id: "v12",
@@ -83,6 +94,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v11", "v13", "v22"],
+      edges: ["e14", "e15", "e21"],
     },
     v13: {
       id: "v13",
@@ -90,6 +102,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v5", "v12", "v14"],
+      edges: ["e9", "e15", "e16"],
     },
     v14: {
       id: "v14",
@@ -97,6 +110,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v13", "v15", "v24"],
+      edges: ["e16", "e17", "e22"],
     },
     v15: {
       id: "v15",
@@ -104,6 +118,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v7", "v14", "v16"],
+      edges: ["e10", "e17", "e18"],
     },
     v16: {
       id: "v16",
@@ -111,6 +126,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v15", "v26"],
+      edges: ["e18", "e23"],
     },
     v17: {
       id: "v17",
@@ -118,6 +134,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v18", "v28"],
+      edges: ["e24", "e34"],
     },
     v18: {
       id: "v18",
@@ -125,6 +142,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v8", "v17", "v19"],
+      edges: ["e19", "e24", "e25"],
     },
     v19: {
       id: "v19",
@@ -132,6 +150,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v18", "v20", "v30"],
+      edges: ["e25", "e26", "e35"],
     },
     v20: {
       id: "v20",
@@ -139,6 +158,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v10", "v19", "v21"],
+      edges: ["e20", "e26", "e27"],
     },
     v21: {
       id: "v21",
@@ -146,6 +166,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v20", "v22", "v32"],
+      edges: ["e27", "e28", "e36"],
     },
     v22: {
       id: "v22",
@@ -153,6 +174,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v12", "v21", "v23"],
+      edges: ["e21", "e28", "e29"],
     },
     v23: {
       id: "v23",
@@ -160,6 +182,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v22", "v24", "v34"],
+      edges: ["e29", "e30", "e37"],
     },
     v24: {
       id: "v24",
@@ -167,6 +190,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v14", "v23", "v25"],
+      edges: ["e22", "e30", "e31"],
     },
     v25: {
       id: "v25",
@@ -174,6 +198,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v24", "v26", "v36"],
+      edges: ["e31", "e32", "e38"],
     },
     v26: {
       id: "v26",
@@ -181,6 +206,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v16", "v25", "v27"],
+      edges: ["e23", "e32", "e33"],
     },
     v27: {
       id: "v27",
@@ -188,6 +214,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v26", "v38"],
+      edges: ["e33", "e39"],
     },
     v28: {
       id: "v28",
@@ -195,6 +222,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v17", "v29"],
+      edges: ["e34", "e40"],
     },
     v29: {
       id: "v29",
@@ -202,6 +230,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v28", "v30", "v39"],
+      edges: ["e40", "e41", "e50"],
     },
     v30: {
       id: "v30",
@@ -209,6 +238,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v19", "v29", "v31"],
+      edges: ["e35", "e41", "e42"],
     },
     v31: {
       id: "v31",
@@ -216,6 +246,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v30", "v32", "v41"],
+      edges: ["e42", "e43", "e51"],
     },
     v32: {
       id: "v32",
@@ -223,6 +254,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v21", "v31", "v33"],
+      edges: ["e36", "e43", "e44"],
     },
     v33: {
       id: "v33",
@@ -230,6 +262,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v32", "v34", "v43"],
+      edges: ["e44", "e45", "e52"],
     },
     v34: {
       id: "v34",
@@ -237,6 +270,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v23", "v33", "v35"],
+      edges: ["e37", "e45", "e46"],
     },
     v35: {
       id: "v35",
@@ -244,6 +278,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v34", "v36", "v45"],
+      edges: ["e46", "e47", "e53"],
     },
     v36: {
       id: "v36",
@@ -251,6 +286,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v25", "v35", "v37"],
+      edges: ["e38", "e47", "e48"],
     },
     v37: {
       id: "v37",
@@ -258,6 +294,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v36", "v38", "v47"],
+      edges: ["e48", "e49", "e54"],
     },
     v38: {
       id: "v38",
@@ -265,6 +302,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v27", "v37"],
+      edges: ["e39", "e49"],
     },
     v39: {
       id: "v39",
@@ -272,6 +310,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v29", "v40"],
+      edges: ["e50", "e55"],
     },
     v40: {
       id: "v40",
@@ -279,6 +318,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v39", "v41", "v48"],
+      edges: ["e55", "e56", "e63"],
     },
     v41: {
       id: "v41",
@@ -286,6 +326,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v31", "v40", "v42"],
+      edges: ["e51", "e56", "e57"],
     },
     v42: {
       id: "v42",
@@ -293,6 +334,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v41", "v43", "v50"],
+      edges: ["e57", "e58", "e64"],
     },
     v43: {
       id: "v43",
@@ -300,6 +342,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v33", "v42", "v44"],
+      edges: ["e52", "e58", "e59"],
     },
     v44: {
       id: "v44",
@@ -307,6 +350,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v43", "v45", "v52"],
+      edges: ["e59", "e60", "e65"],
     },
     v45: {
       id: "v45",
@@ -314,6 +358,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v35", "v44", "v46"],
+      edges: ["e53", "e60", "e61"],
     },
     v46: {
       id: "v46",
@@ -321,6 +366,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v45", "v47", "v54"],
+      edges: ["e61", "e62", "e66"],
     },
     v47: {
       id: "v47",
@@ -328,6 +374,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v37", "v46"],
+      edges: ["e54", "e62"],
     },
     v48: {
       id: "v48",
@@ -335,6 +382,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v40", "v49"],
+      edges: ["e63", "e67"],
     },
     v49: {
       id: "v49",
@@ -342,6 +390,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v48", "v50"],
+      edges: ["e67", "e68"],
     },
     v50: {
       id: "v50",
@@ -349,6 +398,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v42", "v49", "v51"],
+      edges: ["e64", "e68", "e69"],
     },
     v51: {
       id: "v51",
@@ -356,6 +406,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v50", "v52"],
+      edges: ["e69", "e70"],
     },
     v52: {
       id: "v52",
@@ -363,6 +414,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v44", "v51", "v53"],
+      edges: ["e65", "e70", "e71"],
     },
     v53: {
       id: "v53",
@@ -370,6 +422,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v52", "v54"],
+      edges: ["e71", "e72"],
     },
     v54: {
       id: "v54",
@@ -377,6 +430,7 @@ export const initialBoardData = {
       owner: null,
       buildingType: null,
       neighbours: ["v46", "v53"],
+      edges: ["e66", "e72"],
     },
   },
 

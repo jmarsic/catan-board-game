@@ -4,6 +4,12 @@ export const PieceCost = {
   city: { grain: 2, ore: 3 },
 };
 
+export const DevelopmentCardCost = {
+  wool: 1,
+  grain: 1,
+  ore: 1,
+};
+
 export const InitialPieces = {
   roads: 15,
   settlements: 5,
