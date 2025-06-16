@@ -15,3 +15,10 @@ export const InitialPieces = {
   settlements: 5,
   cities: 4,
 };
+
+export const PhaseMessages = {
+  setup: "Click on vertex and then adjacent edge to build.",
+  placeRobber: "Robber activated! Click a hex to move and steal.",
+  steal: "Choose a player to steal from.",
+  freeRoad: "Place your free roads.",
+};
